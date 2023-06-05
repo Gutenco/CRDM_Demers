@@ -1,0 +1,128 @@
+/* Google Font Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins" , sans-serif;
+}
+body{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #e4dcec;
+    padding: 30px;
+}
+.login-container{
+    position: relative;
+    max-width: 430px;
+    width: 100%;
+    background: #fff;
+    padding: 30px 30px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+
+.container .form-content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.form-content .login-form{
+    width: 370px;
+}
+.form-content .title{
+    position: relative;
+    font-size: 40px;
+    font-weight: 500;
+    color: #333;
+    padding-bottom: 3px;
+}
+.form-content .title:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 4px;
+    width: 106px;
+    background:  #006269;
+}
+
+.form-content .input-boxes{
+    margin-top: 40px;
+}
+.form-content .input-box{
+    display: flex;
+    align-items: center;
+    height: 50px;
+    width: 100%;
+    margin: 30px 0;
+    position: relative;
+}
+
+
+.form-content .input-box input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    border: none;
+    padding: 0 30px;
+    font-size: 19px;
+    font-weight: 500;
+    border-bottom: 2px solid rgba(0,0,0,0.2);
+    transition: all 0.3s ease;
+}
+#input-username, #input-pass{
+     width: 370px;
+}
+
+.form-content .input-box input:focus,
+.form-content .input-box input:valid{
+    border-color:  #00A9B5;
+}
+.form-content .input-box i{
+    position: absolute;
+    color:  #006269;
+    font-size: 19px;
+}
+.form-content .text{
+    font-size: 14px;
+    font-weight: 500;
+
+}
+.form-content .text a{
+    text-decoration: none;
+    color: gray;
+}
+.form-content .text a:hover{
+    text-decoration: underline;
+    color: #298BF5;
+}
+.form-content .button{
+    color: #fff;
+    margin-top: 40px;
+}
+.form-content .button input{
+    color: #fff;
+    font-size: 17px;
+    background: #00A9B5;
+    border-radius: 6px;
+    padding: 0;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+.form-content .button input:hover{
+    background: #45D69C;
+}
+
+.form-content label:hover{
+    text-decoration: underline;
+}
+.form-content .login-text
+{
+    text-align: center;
+    margin-top: 25px;
+}
+
+

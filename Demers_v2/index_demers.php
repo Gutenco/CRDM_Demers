@@ -1,0 +1,154 @@
+<?php
+require_once 'auth.php';
+require_once 'config/db_config.php';
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Demers</title>
+  <link rel="stylesheet" href="css/style_demers.css">
+  <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+  <script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.71/pdfmake.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.71/vfs_fonts.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</head>
+<body>
+
+<nav class="navbar">
+
+  <div class="logo">
+    <i class="bx bx-menu menu-icon" id="nav-menu-icon"></i>
+    <span id="nav-logo-name" class="logo-name">IMSP CRDM</span>
+    <img id="logo-img" src="images/logo%202.png" alt="logo_img">
+  </div>
+
+  <div class="sidebar">
+    <div class="logo">
+      <i class="bx bx-menu menu-icon"></i>
+      <span class="logo-name">IMSP CRDM</span>
+    </div>
+
+    <div class="sidebar-content">
+      <div class="lists">
+        <li class="list">
+          <a href="#" class="nav-link">
+              <i class='bx bx-history icon' ></i>
+            <span class="link">History</span>
+          </a>
+        </li>
+
+        <li class="list">
+          <a href="admin_mockup.php" class="nav-link">
+            <i class="bx bx-user-circle icon"></i>
+            <span class="link">Administrare</span>
+          </a>
+        </li>
+      </div>
+
+      <div class="bottom-content">
+        <li class="list">
+          <a href="logout.php" class="nav-link">
+            <i class="bx bx-log-out icon"></i>
+            <span class="link">Logout</span>
+          </a>
+        </li>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<section class="overlay"></section>
+
+<div class="form-container">
+  <div id="no-border-content">
+    <div class="name-container">
+      <p id="top-text-name">
+        <span id="department">Vlad</span>
+        <br> al IMSP CRDM
+        <b><i id="boss-name"> VLAD</i></b><br>
+      </p>
+      <div class="name">
+        <p id="name-text-select">de la:</p>
+        <label>
+          <input type="text" list="datalistOptions1" id="name-select">
+          <datalist id="datalistOptions1">
+            <option>Andreico Larisa</option>
+            <option>Nume Prenume 2</option>
+            <option>Nume Prenume 3</option>
+            <option>Nume Prenume 4</option>
+            <option>Nume Prenume 5</option>
+            <option>Nume Prenume 6</option>
+          </datalist>
+          <p id="label-description">(Numele Prenumele)</p>
+        </label>
+      </div>
+
+      <div class="section">
+        <p id="sectia-text-select">Sec&#539;ia:</p>
+        <label>
+          <input list="datalistOptions2" id="section-select">
+          <datalist id="datalistOptions2">
+            <option>Radiologie &amp; TC.</option>
+            <option>USG General&#259;</option>
+            <option>Ecocardiografie &amp; SVM</option>
+            <option>Diagnostic Func&#539;ional</option>
+            <option>Endoscopie</option>
+            <option>Imagistic&#259; RM</option>
+            <option>Consultativ&#259;</option>
+          </datalist>
+        </label>
+      </div>
+    </div>
+    <form>
+      <fieldset>
+        <legend class="mx-auto text-center"><b>DEMERS</b></legend> <br>
+        <p class="permisiune">Rog permisiunea dumneavoastr&#259; de a primi de la depozit :</p>
+        <div id="inputs"> </div>
+      </fieldset>
+    </form>
+
+    <div class="under-form-container">
+      <div class="date">
+        <label class="datepicker-label"><b>Data:</b> </label>
+        <label for="datepicker"></label><input type="text" id="datepicker" class="datepicker-input">
+      </div>
+
+      <div class="signature">
+        <label class="semnatura"><b>Semn&#259;tura</b> </label>
+        <label for="sign_bottom"></label><input type="text" id="sign_bottom">
+      </div>
+    </div>
+    <div class="buttons-container">
+      <button class="btn  btn-outline-success" onclick="addInput()">
+        <i class="bi bi-clipboard-plus"> </i> Add
+      </button>
+
+      <button type="button" class="btn btn-outline-dark" onclick="window.print()">
+        <i class="bi bi-printer"> </i> Print
+      </button>
+
+      <button type="button" class="btn btn-outline-secondary" onclick="generatePDF()">
+        <i class="bi bi-filetype-pdf"></i> Save PDF
+      </button>
+    </div>
+  </div>
+</div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.71/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.71/vfs_fonts.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" integrity="sha512-BNaRQnYJYiPSqHHDb58B0yaPfCu+Wgds8Gp/gU33kqBtgNS4tSPHuGibyoeqMV/TJlSKda6FXzoEyYGjTe+vXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://code.jquery.com/jquery-3.6.3.js" integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+<script src="script_demers.js"></script>
+</body>
+</html>

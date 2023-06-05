@@ -1,0 +1,372 @@
+
+/*------------------------top-menu--------------*/
+nav {
+    z-index: 1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 70px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: #80c0ff;
+    box-shadow: rgba(104, 112, 118, 0.09) 0 13px 23px 6px;
+}
+
+nav .logo {
+    display: flex;
+    align-items: center;
+    margin: 0 24px;
+}
+#logo-img{
+    width: 40px;
+    height: 40px;
+}
+#nav-menu-icon{
+    color: white;
+}
+#nav-logo-name{
+    color: white;
+    text-shadow: 2px 2px 2px rgba(0,0,0,0.2);
+}
+.logo .menu-icon {
+    color: #333;
+    font-size: 24px;
+    margin-right: 14px;
+    cursor: pointer;
+}
+.logo .logo-name {
+    color: #333;
+    font-size: 24px;
+    font-weight: 500;
+    margin-right: 14px;
+}
+nav .sidebar {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    width: 260px;
+    padding: 20px 0;
+    background-color: #fff;
+    box-shadow: 0 5px 1px rgba(0, 0, 0, 0.1);
+    transition: all 0.4s ease;
+}
+nav.open .sidebar {
+    left: 0;
+}
+.sidebar .sidebar-content {
+
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px 16px;
+}
+.sidebar-content .list {
+    list-style: none;
+}
+
+.list .nav-link {
+    display: flex;
+    align-items: center;
+    margin: 8px 0;
+    padding: 14px 12px;
+    border-radius: 8px;
+    text-decoration: none;
+}
+ .lists .nav-link:hover   {
+    background-color: #96cdff;
+}
+.bottom-content .nav-link:hover{
+    background-color: #96cdff;
+}
+
+.nav-link .icon {
+    margin-right: 14px;
+    font-size: 20px;
+    color: #030303;
+}
+.nav-link .link {
+    font-size: 16px;
+    color: #020202;
+    font-weight: 400;
+}
+.lists .nav-link:hover .icon,
+.lists .nav-link:hover .link {
+    color: #fff;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    height: 1000vh;
+    width: 200%;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s ease;
+    background: rgba(0, 0, 0, 0.3);
+}
+nav.open ~ .overlay {
+    opacity: 1;
+    left: 260px;
+    z-index: 1;
+    pointer-events: auto;
+}
+
+.form-container{
+    border: 1px solid #bbbaba;
+    margin: 50px auto 50px;
+    height: auto;
+    width: 215mm;
+    font-family: "Times New Roman", serif;
+    position: relative;
+    /* color: white; */
+    box-shadow: rgba(104, 112, 118, 0.08) 0 12px 20px 6px;
+}
+
+
+.name-container{
+    font-size: 17px;
+    float: right;
+    position: absolute;
+    right: 45px;
+    top: 15px;
+    /* height: 200px; */
+    padding: 10px;
+    width: auto;
+    font-family: "Times New Roman", serif;
+
+}
+
+.name, .section{
+    display: flex;
+    /*height: 48px; */
+    margin-bottom: 5px;
+}
+
+.name{
+    height: 48px;
+}
+.section{
+    height: 40px;
+}
+
+form {
+    font-family: "Times New Roman", serif;
+    /* border: 1px solid black; */
+    width: 210mm; /* Set the width to match A5 landscape width */
+    margin: 160px auto 0;
+    padding: 10px;
+
+}
+
+fieldset{
+    text-align: center;
+}
+legend b {
+    font-size: 19px;
+}
+
+input[type="text"] {
+    border-radius: 0;
+    border: none; /* Remove all borders */
+    border-bottom: 1.5px solid black; /* Add a bottom border */
+    outline: none; /* Remove the outline */
+    width: 430px;
+    font-size: 17px;
+    /*  height: 2.5em; */
+    /* padding-bottom: 20px; */
+}
+
+input[type="number"]{
+    border-radius: 0;
+    border: none; /* Remove all borders */
+    border-bottom: 1.5px solid black; /* Add a bottom border */
+    outline: none; /* Remove the outline */
+    width: 50px;
+    font-size: 18px;
+    text-align: center;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none; /* Remove the default appearance */
+    margin: 0;
+}
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+label, span {
+    font-size: 18px;
+    display: inline-block;
+    vertical-align: bottom; /* Align the label with the bottom of the input field */
+    line-height: 1.5; /* Set the line height to match the height of the input field */
+    padding: 0;
+}
+
+.form-group {
+    margin-bottom: 10px;
+}
+
+.form-group span {
+
+    margin-right: 5px;
+}
+
+.permisiune{
+    font-size: 18px;
+    text-align: start;
+    margin-left: 10px;
+}
+
+.delete-container{
+    float: right;
+}
+
+#section-select, #name-select{
+    border-radius: 0;
+    border: none;
+    border-bottom: 1.5px solid black;
+    outline: none;
+    font-size: 17px;
+    height: 28px;
+    line-height: 30px;
+    text-align: center;
+}
+
+
+#section-select{
+    width: 227px;
+}
+#name-select{
+    width: 236px;
+}
+
+#label-description{
+    font-size: 14px;
+    text-align: center;
+}
+
+#sectia-text-select, #name-text-select{
+    margin-top: 5px;
+    padding-right: 5px;
+}
+#sectia-text-select{
+    margin-bottom: 8px;
+}
+
+#top-text-name{
+    /* letter-spacing: 1px; */
+    height: 45px;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    line-height: 1.3;
+    position: relative;
+    z-index: auto;
+}
+
+.input-text, .input-cantitate,
+.input-num, .denumire, .cantitate{
+    margin-right: 4px;
+}
+
+.under-form-container{
+    display: flex;
+    /* border: 1px solid black; */
+    padding: 15px;
+    justify-content: space-around;
+    font-family: "Times New Roman", serif;
+}
+/*------------------datepicker------------------------------*/
+.flatpickr-input {
+    width: 42%;
+    font-size: 17px;
+    /* border: none; */
+    /*   border-bottom: 1.5px solid black; */
+    outline: none;
+}
+
+/* Style for the Flatpickr calendar */
+.flatpickr-calendar {
+    font-size: 14px;
+    box-shadow: none;
+    border: 1.5px solid black;
+
+    background-color: white;
+    z-index: 9999;
+}
+
+
+/* Style for the Flatpickr selected day */
+.flatpickr-day.selected {
+    background-color: #007bff;
+    color: white;
+}
+/*-------------------------------------------------------*/
+.date{
+    /* border: 1px solid black; */
+    width: 30%;
+}
+
+.signature{
+    /* border: 1px solid black; */
+    width: 50%;
+}
+
+#datepicker{
+    width: 42%;
+    /* line-height: 1.1; */
+    font-size: 16px;
+}
+
+#sign_bottom{
+    width: auto;
+    margin-left: 35px;
+    text-align: center;
+}
+
+.datepicker-input, #sign_bottom {
+    border-bottom: 1.5px solid black; /* Add a bottom border */
+    outline: none; /* Remove the outline */
+}
+
+.datepicker-label,.semnatura {
+    font-size: 17px;
+    display: inline-block; /* Display the label as an inline block */
+    vertical-align: bottom; /* Align the label with the bottom of the input field */
+    line-height: 1; /* Set the line height to match the height of the input field */
+    padding: 0;
+}
+
+.buttons-container{
+    display: flex;
+    gap: 10px;
+    margin-left: 17px;
+    margin-bottom: 15px;
+}
+
+.delete-container{
+    float: right;
+}
+
+@media print {
+    @page {
+        margin: 0;
+    }
+    body {
+        margin: 0;
+    }
+    .navbar, .buttons-container, .delete-container {
+        display: none !important;
+    }
+    .form-container{
+        border: 1px solid white;
+        margin-top: 0;
+        box-shadow: none;
+    }
+    .flatpickr-input {
+        line-height: 1;
+    }
+}
